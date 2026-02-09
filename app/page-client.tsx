@@ -229,8 +229,8 @@ export function PageClient({ product }: PageClientProps) {
               <h4 className="font-semibold mb-4">{t.footer.support}</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="#faq" className="hover:text-foreground transition-colors">{t.footer.faq}</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">{t.footer.shipping}</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">{t.footer.returns}</a></li>
+                <li><a href="/dostava" className="hover:text-foreground transition-colors">{t.footer.shipping}</a></li>
+                <li><a href="/povracaj" className="hover:text-foreground transition-colors">{t.footer.returns}</a></li>
               </ul>
             </div>
 
@@ -238,15 +238,16 @@ export function PageClient({ product }: PageClientProps) {
             <div>
               <h4 className="font-semibold mb-4">{t.footer.legal}</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">{t.footer.privacy}</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">{t.footer.terms}</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">{t.footer.cookies}</a></li>
+                <li><a href="/politika-privatnosti" className="hover:text-foreground transition-colors">{t.footer.privacy}</a></li>
+                <li><a href="/uslovi-koriscenja" className="hover:text-foreground transition-colors">{t.footer.terms}</a></li>
+                <li><a href="/politika-kolacica" className="hover:text-foreground transition-colors">{t.footer.cookies}</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} disi.rs - Сва права задржана.</p>
+          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground space-y-2">
+            <p>&copy; {new Date().getFullYear()} disi.rs - Sva prava zadržana.</p>
+            <p>Developed by: <a href="https://instagram.com/codehydrastack" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@codehydrastack</a></p>
           </div>
         </div>
       </footer>
