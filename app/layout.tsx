@@ -12,8 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | DISHI.rs - Trakice za Nos",
-    default: "DISHI.rs - Premium Trakice za Nos za Bolje Disanje | Nazalni Flasteri",
+    template: "%s | disi.rs - Trakice za Nos",
+    default: "disi.rs - Premium Trakice za Nos za Bolje Disanje | Nazalni Flasteri",
   },
   description:
     "Premium trakice za nos za bolje disanje i smanjenje hrkanja. Medicinski kvalitet, klinički testirano. Brza dostava u Srbiji. Poručite na disi.rs!",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "bolje disanje",
     "protiv hrkanja",
     "nose strips srbija",
-    "dishi",
+    "disi",
     "disi",
     "flasteri za nos",
     "poboljšanje disanja",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     "anti hrkanje",
     "nosne trakice",
   ],
-  authors: [{ name: "DISHI.rs" }],
-  creator: "DISHI.rs",
-  publisher: "DISHI.rs",
+  authors: [{ name: "disi.rs" }],
+  creator: "disi.rs",
+  publisher: "disi.rs",
   metadataBase: new URL("https://disi.rs"),
   alternates: {
     canonical: "https://disi.rs",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "sr_RS",
     url: "https://disi.rs",
-    siteName: "DISHI.rs",
-    title: "DISHI.rs - Premium Trakice za Nos za Bolje Disanje",
+    siteName: "disi.rs",
+    title: "disi.rs - Premium Trakice za Nos za Bolje Disanje",
     description:
       "Premium trakice za nos za bolje disanje i smanjenje hrkanja. Medicinski kvalitet, klinički testirano. Poručite na disi.rs!",
     images: [
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "DISHI - Premium Trakice za Nos za Bolje Disanje",
+        alt: "disi - Premium Trakice za Nos za Bolje Disanje",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DISHI.rs - Premium Trakice za Nos za Bolje Disanje",
+    title: "disi.rs - Premium Trakice za Nos za Bolje Disanje",
     description:
       "Premium trakice za nos za bolje disanje i smanjenje hrkanja. Poručite na disi.rs!",
     images: ["/og-image.jpg"],

@@ -50,7 +50,7 @@ export function Navigation() {
             <div className="relative h-7 w-16">
               <Image
                 src="/logo.png"
-                alt="DISHI - Premium Trakice za Nos"
+                alt="disi - Premium Trakice za Nos"
                 fill
                 sizes="64px"
                 className={`object-contain transition-all ${theme === "dark" ? "invert" : ""}`}

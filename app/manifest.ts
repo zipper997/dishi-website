@@ -2,8 +2,8 @@ import { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "DISHI.rs - Premium Trakice za Nos",
-    short_name: "DISHI",
+    name: "disi.rs - Premium Trakice za Nos",
+    short_name: "disi",
     description:
       "Premium trakice za nos za bolje disanje i smanjenje hrkanja. Poručite online sa brzom dostavom u Srbiji.",
     start_url: "/",

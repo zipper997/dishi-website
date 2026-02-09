@@ -2,7 +2,7 @@ export function JsonLd() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "DISHI.rs",
+    name: "disi.rs",
     url: "https://disi.rs",
     logo: "https://disi.rs/logo.png",
     description:
@@ -23,7 +23,7 @@ export function JsonLd() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "DISHI.rs",
+    name: "disi.rs",
     url: "https://disi.rs",
     potentialAction: {
       "@type": "SearchAction",
@@ -35,15 +35,15 @@ export function JsonLd() {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "DISHI Premium Trakice za Nos",
+    name: "disi Premium Trakice za Nos",
     description:
       "Premium nazalne trakice za bolje disanje i smanjenje hrkanja. Medicinski kvalitet, hipoalergenske, klinički testirane.",
     image: "https://disi.rs/og-image.jpg",
     brand: {
       "@type": "Brand",
-      name: "DISHI",
+      name: "disi",
     },
-    sku: "DISHI-NS-001",
+    sku: "disi-NS-001",
     offers: {
       "@type": "Offer",
       price: "1299",
@@ -52,7 +52,7 @@ export function JsonLd() {
       url: "https://disi.rs",
       seller: {
         "@type": "Organization",
-        name: "DISHI.rs",
+        name: "disi.rs",
       },
     },
   }
@@ -71,7 +71,7 @@ export function JsonLd() {
       },
       {
         "@type": "Question",
-        name: "Kako se koriste DISHI trakice za nos?",
+        name: "Kako se koriste disi trakice za nos?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Očistite i osušite nos. Skinite zaštitnu foliju sa trakice. Postavite trakicu na sredinu nosa, preko nosnog mosta. Pritisnite blago da se dobro zalepi. Nosite tokom spavanja ili fizičke aktivnosti.",
@@ -90,15 +90,15 @@ export function JsonLd() {
         name: "Koliko dugo traje jedna trakica?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Jedna DISHI trakica je dizajnirana za jednokratnu upotrebu i traje do 12 sati. Preporučujemo korišćenje nove trakice svake noći za najbolje rezultate.",
+          text: "Jedna disi trakica je dizajnirana za jednokratnu upotrebu i traje do 12 sati. Preporučujemo korišćenje nove trakice svake noći za najbolje rezultate.",
         },
       },
       {
         "@type": "Question",
-        name: "Da li su DISHI trakice bezbedne?",
+        name: "Da li su disi trakice bezbedne?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Apsolutno. DISHI trakice su napravljene od hipoalergenskih materijala medicinskog kvaliteta. Bezbedne su za svakodnevnu upotrebu i ne sadrže nikakve lekove.",
+          text: "Apsolutno. disi trakice su napravljene od hipoalergenskih materijala medicinskog kvaliteta. Bezbedne su za svakodnevnu upotrebu i ne sadrže nikakve lekove.",
         },
       },
       {

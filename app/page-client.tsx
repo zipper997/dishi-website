@@ -207,7 +207,7 @@ export function PageClient({ product }: PageClientProps) {
               <div className="relative h-8 w-24">
                 <Image
                   src="/logo.png"
-                  alt="DISHI - Premium Trakice za Nos"
+                  alt="disi - Premium Trakice za Nos"
                   fill
                   sizes="96px"
                   className={`object-contain ${theme === "dark" ? "invert" : ""}`}
@@ -252,7 +252,7 @@ export function PageClient({ product }: PageClientProps) {
           </div>
 
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} DISHI.rs - Сва права задржана.</p>
+            <p>&copy; {new Date().getFullYear()} disi.rs - Сва права задржана.</p>
           </div>
         </div>
       </footer>

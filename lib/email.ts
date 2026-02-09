@@ -24,7 +24,7 @@ export async function sendOrderConfirmationEmail(
     }).format(Math.floor(data.totalPrice))
 
     await resend.emails.send({
-      from: "DISHI <narudzbine@disi.rs>",
+      from: "disi <narudzbine@disi.rs>",
       to: data.customerEmail,
       subject: `Potvrda porudžbine - ${data.orderNumber}`,
       html: `
@@ -88,7 +88,7 @@ export async function sendOrderConfirmationEmail(
               </div>
               <div class="content">
                 <p>Poštovani/a ${data.customerName},</p>
-                <p>Hvala vam na porudžbini! Sa zadovoljstvom pripremamo vaše DISHI trakice za nos.</p>
+                <p>Hvala vam na porudžbini! Sa zadovoljstvom pripremamo vaše disi trakice za nos.</p>
 
                 <div class="order-details">
                   <h2 style="margin-top: 0;">Detalji porudžbine</h2>
@@ -98,7 +98,7 @@ export async function sendOrderConfirmationEmail(
                   </div>
                   <div class="detail-row">
                     <span>Proizvod:</span>
-                    <span>DISHI Trakice za Nos</span>
+                    <span>disi Trakice za Nos</span>
                   </div>
                   <div class="detail-row">
                     <span>Količina:</span>
@@ -123,7 +123,7 @@ export async function sendOrderConfirmationEmail(
                 <p>Ako imate bilo kakva pitanja, odgovorite na ovaj email sa vašim brojem porudžbine (${data.orderNumber}).</p>
               </div>
               <div class="footer">
-                <p>&copy; ${new Date().getFullYear()} DISHI.rs - Sva prava zadržana.</p>
+                <p>&copy; ${new Date().getFullYear()} disi.rs - Sva prava zadržana.</p>
                 <p><a href="https://disi.rs" style="color: #3b82f6;">disi.rs</a></p>
               </div>
             </div>

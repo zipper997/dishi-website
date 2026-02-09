@@ -11,7 +11,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      badge: "#1 Najprodavanije Trakice za Nos u Srbiji",
+      badge: "Otkrijte Tajnu Boljeg Disanja",
       title1: "Dišite Bolje.",
       title2: "Spavajte Dublje.",
       rating: "od 2.847 recenzija",
@@ -39,7 +39,7 @@ export const translations = {
     },
     // About Section
     about: {
-      title: "Zašto Izabrati DISHI Trakice?",
+      title: "Zašto Izabrati disi Trakice?",
       description: "Naše premium trakice za nos su dizajnirane sa naprednom tehnologijom kako bi pružile trenutno olakšanje i poboljšale vaše disanje.",
       medicalGrade: "Medicinski Kvalitet",
       medicalDesc: "Napravljeno od hipoalergenskih materijala medicinskog kvaliteta koji su nežni prema vašoj koži.",
@@ -51,17 +51,17 @@ export const translations = {
     // FAQ Section
     faq: {
       title: "Česta Pitanja",
-      subtitle: "Sve što želite da znate o DISHI trakicama za nos",
+      subtitle: "Sve što želite da znate o disi trakicama za nos",
       q1: "Šta su trakice za nos?",
       a1: "Trakice za nos (nazalni flasteri) su medicinski proizvodi koji se lepe na spoljašnju stranu nosa. Nežno otvaraju nosne prolaze i poboljšavaju protok vazduha, što olakšava disanje kroz nos.",
-      q2: "Kako se koriste DISHI trakice za nos?",
+      q2: "Kako se koriste disi trakice za nos?",
       a2: "Očistite i osušite nos. Skinite zaštitnu foliju sa trakice. Postavite trakicu na sredinu nosa, preko nosnog mosta. Pritisnite blago da se dobro zalepi. Nosite tokom spavanja ili fizičke aktivnosti.",
       q3: "Da li trakice za nos pomažu kod hrkanja?",
       a3: "Da! Klinička ispitivanja su pokazala da nazalne trakice mogu smanjiti hrkanje poboljšanjem protoka vazduha kroz nos do 31%. Idealne su za osobe koje hrču zbog začepljenog nosa.",
       q4: "Koliko dugo traje jedna trakica?",
-      a4: "Jedna DISHI trakica je dizajnirana za jednokratnu upotrebu i traje do 12 sati. Preporučujemo korišćenje nove trakice svake noći za najbolje rezultate.",
-      q5: "Da li su DISHI trakice bezbedne?",
-      a5: "Apsolutno. DISHI trakice su napravljene od hipoalergenskih materijala medicinskog kvaliteta. Bezbedne su za svakodnevnu upotrebu i ne sadrže nikakve lekove.",
+      a4: "Jedna disi trakica je dizajnirana za jednokratnu upotrebu i traje do 12 sati. Preporučujemo korišćenje nove trakice svake noći za najbolje rezultate.",
+      q5: "Da li su disi trakice bezbedne?",
+      a5: "Apsolutno. disi trakice su napravljene od hipoalergenskih materijala medicinskog kvaliteta. Bezbedne su za svakodnevnu upotrebu i ne sadrže nikakve lekove.",
       q6: "Kolika je cena i kako mogu da poručim?",
       a6: "Cenu možete videti na našem sajtu disi.rs. Poručivanje je jednostavno - popunite formular na sajtu sa vašim podacima i adresom za dostavu. Dostava je brza, 2-3 radna dana na teritoriji Srbije.",
       q7: "Da li vršite dostavu u celoj Srbiji?",
@@ -158,7 +158,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      badge: "#1 Best Selling Nose Strips in Serbia",
+      badge: "Discover the Secret to Better Breathing",
       title1: "Breathe Better.",
       title2: "Sleep Deeper.",
       rating: "from 2,847 reviews",
@@ -186,7 +186,7 @@ export const translations = {
     },
     // About Section
     about: {
-      title: "Why Choose DISHI Strips?",
+      title: "Why Choose disi Strips?",
       description: "Our premium nose strips are designed with cutting-edge technology to provide instant relief and improve your breathing.",
       medicalGrade: "Medical Grade",
       medicalDesc: "Made with hypoallergenic, medical-grade materials that are gentle on your skin.",
@@ -198,17 +198,17 @@ export const translations = {
     // FAQ Section
     faq: {
       title: "Frequently Asked Questions",
-      subtitle: "Everything you want to know about DISHI nose strips",
+      subtitle: "Everything you want to know about disi nose strips",
       q1: "What are nose strips?",
       a1: "Nose strips (nasal strips) are medical products that adhere to the outside of the nose. They gently open nasal passages and improve airflow, making it easier to breathe through the nose.",
-      q2: "How do I use DISHI nose strips?",
+      q2: "How do I use disi nose strips?",
       a2: "Clean and dry your nose. Remove the protective film from the strip. Place the strip on the center of your nose, over the nasal bridge. Press gently to ensure good adhesion. Wear during sleep or physical activity.",
       q3: "Do nose strips help with snoring?",
       a3: "Yes! Clinical studies have shown that nasal strips can reduce snoring by improving nasal airflow by up to 31%. They are ideal for people who snore due to nasal congestion.",
       q4: "How long does one strip last?",
-      a4: "One DISHI strip is designed for single use and lasts up to 12 hours. We recommend using a new strip each night for best results.",
-      q5: "Are DISHI strips safe?",
-      a5: "Absolutely. DISHI strips are made from hypoallergenic, medical-grade materials. They are safe for daily use and contain no medications.",
+      a4: "One disi strip is designed for single use and lasts up to 12 hours. We recommend using a new strip each night for best results.",
+      q5: "Are disi strips safe?",
+      a5: "Absolutely. disi strips are made from hypoallergenic, medical-grade materials. They are safe for daily use and contain no medications.",
       q6: "What is the price and how can I order?",
       a6: "You can see the price on our website disi.rs. Ordering is simple - fill out the form on the website with your details and delivery address. Delivery is fast, 2-3 business days within Serbia.",
       q7: "Do you deliver throughout Serbia?",
