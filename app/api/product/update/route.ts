@@ -10,8 +10,8 @@ const updateProductSchema = z.object({
 export async function PATCH(request: NextRequest) {
   try {
     // Check if user is authenticated
-    const session = await getSession(request)
-    if (!session) {
+    const session = await getSession()
+    if (!session.isLoggedIn) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
