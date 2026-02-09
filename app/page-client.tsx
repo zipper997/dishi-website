@@ -3,7 +3,7 @@
 import { Navigation } from "@/components/Navigation"
 import { ProductHeroClient } from "@/components/ProductHeroClient"
 import { OrderForm } from "@/components/OrderForm"
-import { Mail, MapPin, Phone, ChevronDown } from "lucide-react"
+import { Mail, MapPin, ChevronDown } from "lucide-react"
 import { useLanguage } from "@/components/providers/LanguageProvider"
 import { useTheme } from "@/components/providers/ThemeProvider"
 import Image from "next/image"
@@ -158,19 +158,13 @@ export function PageClient({ product }: PageClientProps) {
                 {t.contact.subtitle}
               </p>
 
-              <address className="not-italic grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+              <address className="not-italic grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 max-w-2xl mx-auto">
                 {[
                   {
                     icon: Mail,
                     title: t.contact.email,
                     value: "info@disi.rs",
                     href: "mailto:info@disi.rs",
-                  },
-                  {
-                    icon: Phone,
-                    title: t.contact.phone,
-                    value: "+381 60 123 4567",
-                    href: "tel:+381601234567",
                   },
                   {
                     icon: MapPin,

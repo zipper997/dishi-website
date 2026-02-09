@@ -14,7 +14,7 @@ export function JsonLd() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+381601234567",
+      email: "info@disi.rs",
       contactType: "customer service",
       availableLanguage: ["Serbian", "English"],
     },
