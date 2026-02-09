@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "protiv hrkanja",
     "nose strips srbija",
     "disi",
-    "disi",
+    "disi.rs",
     "flasteri za nos",
     "poboljšanje disanja",
     "smanjenje hrkanja",
@@ -51,21 +51,12 @@ export const metadata: Metadata = {
     title: "disi.rs - Premium Trakice za Nos za Bolje Disanje",
     description:
       "Premium trakice za nos za bolje disanje i smanjenje hrkanja. Medicinski kvalitet, klinički testirano. Poručite na disi.rs!",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "disi - Premium Trakice za Nos za Bolje Disanje",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "disi.rs - Premium Trakice za Nos za Bolje Disanje",
     description:
       "Premium trakice za nos za bolje disanje i smanjenje hrkanja. Poručite na disi.rs!",
-    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
