@@ -1,0 +1,64 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  orderNumber     String      @unique
+
+  // Customer Information
+  customerName    String
+  customerEmail   String
+  customerPhone   String
+  shippingAddress String
+  city            String
+  state           String
+  zipCode         String
+
+  // Order Details
+  quantity        Int
+  pricePerUnit    Float
+  totalPrice      Float
+
+  // Order Status
+  status          OrderStatus @default(PENDING)
+  shippedAt       DateTime?
+  notes           String?
+
+  // Timestamps
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([customerEmail])
+  @@index([createdAt])
+  @@index([status])
+}
+
+enum OrderStatus {
+  PENDING
+  SHIPPED
+  CANCELLED
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id          String  @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  inStock     Boolean @default(true)
+  imageUrl    String?
+}
