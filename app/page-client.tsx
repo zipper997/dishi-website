@@ -247,7 +247,7 @@ export function PageClient({ product }: PageClientProps) {
 
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground space-y-2">
             <p>&copy; {new Date().getFullYear()} disi.rs - Sva prava zadržana.</p>
-            <p>Developed by: <a href="https://instagram.com/codehydrastack" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@codehydrastack</a></p>
+            <p>Developed by: <a href="https://www.instagram.com/codehydrastack?igsh=MWF4M3dkZHUxczltZQ==" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@codehydrastack</a></p>
           </div>
         </div>
       </footer>
