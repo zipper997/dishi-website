@@ -35,6 +35,8 @@ export function ProductHeroClient({ product }: ProductHeroProps) {
         loop
         muted
         playsInline
+        preload="metadata"
+        poster="/logo.png"
         key={isMobile ? 'mobile' : 'desktop'}
         className="absolute top-0 left-0 w-full h-full object-cover"
         style={{ zIndex: 0, opacity: 0.6 }}

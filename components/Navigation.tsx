@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, ShoppingBag, Info, Phone, Sun, Moon, Languages } from "lucide-react"
+import { Menu, ShoppingBag, Info, Phone, Sun, Moon, Languages, HelpCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -23,6 +23,7 @@ export function Navigation() {
   const menuItems = [
     { label: t.nav.home, href: "/", icon: ShoppingBag },
     { label: t.nav.about, href: "#about", icon: Info },
+    { label: t.nav.faq, href: "#faq", icon: HelpCircle },
     { label: t.nav.contact, href: "#contact", icon: Phone },
   ]
 
@@ -41,7 +42,7 @@ export function Navigation() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav aria-label="Main navigation" className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -49,7 +50,7 @@ export function Navigation() {
             <div className="relative h-7 w-16">
               <Image
                 src="/logo.png"
-                alt="ДИШИМ"
+                alt="DISHI - Premium Trakice za Nos"
                 fill
                 sizes="64px"
                 className={`object-contain transition-all ${theme === "dark" ? "invert" : ""}`}

@@ -18,19 +18,27 @@ export async function sendOrderConfirmationEmail(
   data: OrderConfirmationEmailData
 ): Promise<{ success: boolean; error?: string }> {
   try {
+    const formattedPrice = new Intl.NumberFormat("sr-RS", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(Math.floor(data.totalPrice))
+
     await resend.emails.send({
-      from: "Nose Strips <orders@yourdomain.com>", // Update with your verified domain
+      from: "DISHI <narudzbine@disi.rs>",
       to: data.customerEmail,
-      subject: `Order Confirmation - ${data.orderNumber}`,
+      subject: `Potvrda porudžbine - ${data.orderNumber}`,
       html: `
         <!DOCTYPE html>
-        <html>
+        <html lang="sr">
           <head>
+            <meta charset="UTF-8">
             <style>
               body {
                 font-family: Arial, sans-serif;
                 line-height: 1.6;
                 color: #333;
+                margin: 0;
+                padding: 0;
               }
               .container {
                 max-width: 600px;
@@ -76,46 +84,47 @@ export async function sendOrderConfirmationEmail(
           <body>
             <div class="container">
               <div class="header">
-                <h1>Thank You for Your Order!</h1>
+                <h1>Hvala Vam na porudžbini!</h1>
               </div>
               <div class="content">
-                <p>Hi ${data.customerName},</p>
-                <p>Thank you for your order! We're excited to get your nose strips to you.</p>
+                <p>Poštovani/a ${data.customerName},</p>
+                <p>Hvala vam na porudžbini! Sa zadovoljstvom pripremamo vaše DISHI trakice za nos.</p>
 
                 <div class="order-details">
-                  <h2 style="margin-top: 0;">Order Details</h2>
+                  <h2 style="margin-top: 0;">Detalji porudžbine</h2>
                   <div class="detail-row">
-                    <span>Order Number:</span>
+                    <span>Broj porudžbine:</span>
                     <span><strong>${data.orderNumber}</strong></span>
                   </div>
                   <div class="detail-row">
-                    <span>Product:</span>
-                    <span>Nose Strips</span>
+                    <span>Proizvod:</span>
+                    <span>DISHI Trakice za Nos</span>
                   </div>
                   <div class="detail-row">
-                    <span>Quantity:</span>
+                    <span>Količina:</span>
                     <span>${data.quantity}</span>
                   </div>
                   <div class="detail-row">
-                    <span>Total Price:</span>
-                    <span>$${data.totalPrice.toFixed(2)}</span>
+                    <span>Ukupna cena:</span>
+                    <span>${formattedPrice} RSD</span>
                   </div>
                 </div>
 
                 <div class="order-details">
-                  <h2 style="margin-top: 0;">Shipping Address</h2>
+                  <h2 style="margin-top: 0;">Adresa za dostavu</h2>
                   <p style="margin: 0;">
                     ${data.shippingAddress}<br>
                     ${data.city}, ${data.state} ${data.zipCode}
                   </p>
                 </div>
 
-                <p>We'll process your order shortly and ship it to the address above. You'll receive another email once your order has been shipped.</p>
+                <p>Uskoro ćemo obraditi vašu porudžbinu i poslati je na gore navedenu adresu. Dobićete još jedan email kada vaša porudžbina bude poslata.</p>
 
-                <p>If you have any questions about your order, please reply to this email with your order number (${data.orderNumber}).</p>
+                <p>Ako imate bilo kakva pitanja, odgovorite na ovaj email sa vašim brojem porudžbine (${data.orderNumber}).</p>
               </div>
               <div class="footer">
-                <p>© ${new Date().getFullYear()} Nose Strips. All rights reserved.</p>
+                <p>&copy; ${new Date().getFullYear()} DISHI.rs - Sva prava zadržana.</p>
+                <p><a href="https://disi.rs" style="color: #3b82f6;">disi.rs</a></p>
               </div>
             </div>
           </body>
