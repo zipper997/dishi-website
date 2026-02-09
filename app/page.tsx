@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma"
 import { PageClient } from "./page-client"
 
+export const dynamic = 'force-dynamic'
+
 export default async function HomePage() {
   // Fetch product from database
   const product = await prisma.product.findUnique({

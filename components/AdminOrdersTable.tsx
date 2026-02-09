@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -39,6 +40,8 @@ export function AdminOrdersTable({ initialOrders }: AdminOrdersTableProps) {
   const [orders, setOrders] = useState<Order[]>(initialOrders)
   const [filter, setFilter] = useState<string>("ALL")
   const [updatingOrderId, setUpdatingOrderId] = useState<string | null>(null)
+  const [deletingOrderId, setDeletingOrderId] = useState<string | null>(null)
+  const router = useRouter()
 
   const filteredOrders = orders.filter((order) => {
     if (filter === "ALL") return true
@@ -63,7 +66,6 @@ export function AdminOrdersTable({ initialOrders }: AdminOrdersTableProps) {
         throw new Error(result.error || "Failed to update order")
       }
 
-      // Update local state
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order.id === orderId ? result.order : order
@@ -76,6 +78,34 @@ export function AdminOrdersTable({ initialOrders }: AdminOrdersTableProps) {
       toast.error(error instanceof Error ? error.message : "Failed to update order")
     } finally {
       setUpdatingOrderId(null)
+    }
+  }
+
+  const handleDeleteOrder = async (orderId: string, orderNumber: string) => {
+    if (!confirm(`Da li ste sigurni da želite da obrišete narudžbinu ${orderNumber}?`)) {
+      return
+    }
+
+    setDeletingOrderId(orderId)
+
+    try {
+      const response = await fetch(`/api/orders/${orderId}`, {
+        method: "DELETE",
+      })
+
+      if (!response.ok) {
+        const result = await response.json()
+        throw new Error(result.error || "Failed to delete order")
+      }
+
+      setOrders((prevOrders) => prevOrders.filter((order) => order.id !== orderId))
+      toast.success(`Narudžbina ${orderNumber} je obrisana`)
+      router.refresh()
+    } catch (error) {
+      console.error("Error deleting order:", error)
+      toast.error(error instanceof Error ? error.message : "Greška pri brisanju narudžbine")
+    } finally {
+      setDeletingOrderId(null)
     }
   }
 
@@ -165,33 +195,46 @@ export function AdminOrdersTable({ initialOrders }: AdminOrdersTableProps) {
                   </TableCell>
                   <TableCell>{order.quantity}</TableCell>
                   <TableCell className="font-medium">
-                    ${order.totalPrice.toFixed(2)}
+                    {order.totalPrice.toLocaleString('sr-RS', {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    })} RSD
                   </TableCell>
                   <TableCell>{getStatusBadge(order.status)}</TableCell>
                   <TableCell className="text-sm">
                     {new Date(order.createdAt).toLocaleDateString()}
                   </TableCell>
                   <TableCell>
-                    {order.status === "PENDING" ? (
+                    <div className="flex gap-2">
+                      {order.status === "PENDING" ? (
+                        <Button
+                          size="sm"
+                          onClick={() => handleMarkShipped(order.id, true)}
+                          disabled={updatingOrderId === order.id}
+                        >
+                          {updatingOrderId === order.id ? "..." : "Pošalji"}
+                        </Button>
+                      ) : order.status === "SHIPPED" ? (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => handleMarkShipped(order.id, false)}
+                          disabled={updatingOrderId === order.id}
+                        >
+                          {updatingOrderId === order.id ? "..." : "Vrati"}
+                        </Button>
+                      ) : (
+                        <span className="text-sm text-muted-foreground">-</span>
+                      )}
                       <Button
                         size="sm"
-                        onClick={() => handleMarkShipped(order.id, true)}
-                        disabled={updatingOrderId === order.id}
+                        variant="destructive"
+                        onClick={() => handleDeleteOrder(order.id, order.orderNumber)}
+                        disabled={deletingOrderId === order.id}
                       >
-                        {updatingOrderId === order.id ? "Updating..." : "Mark Shipped"}
+                        {deletingOrderId === order.id ? "..." : "Obriši"}
                       </Button>
-                    ) : order.status === "SHIPPED" ? (
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={() => handleMarkShipped(order.id, false)}
-                        disabled={updatingOrderId === order.id}
-                      >
-                        {updatingOrderId === order.id ? "Updating..." : "Mark Pending"}
-                      </Button>
-                    ) : (
-                      <span className="text-sm text-muted-foreground">-</span>
-                    )}
+                    </div>
                   </TableCell>
                 </TableRow>
               ))

@@ -3,6 +3,9 @@ import { prisma } from "@/lib/prisma"
 import { isAuthenticated, getSession } from "@/lib/auth"
 import { AdminOrdersTable } from "@/components/AdminOrdersTable"
 import { AdminPriceUpdate } from "@/components/AdminPriceUpdate"
+import { RefreshButton } from "@/components/RefreshButton"
+
+export const dynamic = 'force-dynamic'
 
 export default async function AdminDashboardPage() {
   const authenticated = await isAuthenticated()
@@ -40,14 +43,17 @@ export default async function AdminDashboardPage() {
               Welcome back, {session.username}
             </p>
           </div>
-          <form action="/api/auth/logout" method="POST">
-            <button
-              type="submit"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Logout
-            </button>
-          </form>
+          <div className="flex items-center gap-4">
+            <RefreshButton />
+            <form action="/api/auth/logout" method="POST">
+              <button
+                type="submit"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Logout
+              </button>
+            </form>
+          </div>
         </div>
       </header>
 

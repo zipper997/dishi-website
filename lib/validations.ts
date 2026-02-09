@@ -7,8 +7,8 @@ export const orderSchema = z.object({
   customerPhone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number"),
   shippingAddress: z.string().min(5, "Address must be at least 5 characters"),
   city: z.string().min(2, "City must be at least 2 characters"),
-  state: z.string().length(2, "State must be 2 characters (e.g., CA, NY)").toUpperCase(),
-  zipCode: z.string().regex(/^\d{5}(-\d{4})?$/, "Please enter a valid ZIP code (e.g., 12345 or 12345-6789)"),
+  state: z.string().min(2, "Unesite opštinu/region").max(50, "Maksimalno 50 karaktera"),
+  zipCode: z.string().regex(/^\d{5}$/, "Unesite validan poštanski broj (5 cifara, npr. 11000)"),
   quantity: z.number().int().min(1, "Quantity must be at least 1").max(100, "Quantity must be less than 100"),
 })
 

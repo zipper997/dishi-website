@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { prisma } from '@/lib/prisma'
 import { getSession } from '@/lib/auth'
 import { z } from 'zod'
@@ -33,6 +34,9 @@ export async function PATCH(request: NextRequest) {
       where: { id: 'default-product' },
       data: { price },
     })
+
+    // Revalidate homepage so the new price shows immediately
+    revalidatePath('/')
 
     return NextResponse.json({
       success: true,
