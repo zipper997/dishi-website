@@ -151,7 +151,7 @@ export function OrderForm({ productPrice }: OrderFormProps) {
                 id="customerPhone"
                 type="tel"
                 {...register("customerPhone")}
-                placeholder="+381641234567"
+                placeholder="0641234567"
                 className="mt-1"
               />
               {errors.customerPhone && (

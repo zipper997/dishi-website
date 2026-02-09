@@ -4,7 +4,7 @@ import { z } from "zod"
 export const orderSchema = z.object({
   customerName: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   customerEmail: z.string().email("Please enter a valid email address"),
-  customerPhone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number"),
+  customerPhone: z.string().regex(/^0[6-7]\d{7,8}$/, "Unesite validan broj telefona (npr. 0641234567)"),
   shippingAddress: z.string().min(5, "Address must be at least 5 characters"),
   city: z.string().min(2, "City must be at least 2 characters"),
   state: z.string().min(2, "Unesite opštinu/region").max(50, "Maksimalno 50 karaktera"),
