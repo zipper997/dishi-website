@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { orderSchema, type OrderFormData } from "@/lib/validations"
@@ -20,6 +20,13 @@ export function OrderForm({ productPrice }: OrderFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [orderSuccess, setOrderSuccess] = useState(false)
   const [orderNumber, setOrderNumber] = useState<string>("")
+  const successRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (orderSuccess && successRef.current) {
+      successRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+    }
+  }, [orderSuccess])
 
   const {
     register,
@@ -69,7 +76,7 @@ export function OrderForm({ productPrice }: OrderFormProps) {
 
   if (orderSuccess) {
     return (
-      <div className="w-full flex items-center justify-center min-h-[60vh]">
+      <div ref={successRef} className="w-full flex items-center justify-center min-h-[60vh]">
         <Card className="w-full max-w-md mx-auto">
           <CardHeader className="text-center">
             <div className="mx-auto w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
