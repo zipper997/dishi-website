@@ -69,40 +69,42 @@ export function OrderForm({ productPrice }: OrderFormProps) {
 
   if (orderSuccess) {
     return (
-      <Card className="w-full max-w-2xl mx-auto">
-        <CardHeader className="text-center">
-          <div className="mx-auto w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-            <svg
-              className="w-8 h-8 text-green-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <CardTitle className="text-3xl">{t.orderSection.orderSuccess}</CardTitle>
-          <CardDescription className="text-lg mt-2">
-            {t.orderSection.orderNumber} <span className="font-bold text-primary">{orderNumber}</span>
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="text-center space-y-4">
-          <p className="text-muted-foreground">
-            {t.orderSection.thankYou}
-          </p>
-          <p className="text-muted-foreground">
-            {t.orderSection.willProcess}
-          </p>
-          <Button onClick={() => setOrderSuccess(false)} className="mt-4">
-            {t.orderSection.placeAnother}
-          </Button>
-        </CardContent>
-      </Card>
+      <div className="w-full flex items-center justify-center min-h-[60vh]">
+        <Card className="w-full max-w-md mx-auto">
+          <CardHeader className="text-center">
+            <div className="mx-auto w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+              <svg
+                className="w-10 h-10 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <CardTitle className="text-2xl">{t.orderSection.orderSuccess}</CardTitle>
+            <CardDescription className="text-base mt-2">
+              {t.orderSection.orderNumber} <span className="font-bold text-primary">{orderNumber}</span>
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <p className="text-muted-foreground text-sm">
+              {t.orderSection.thankYou}
+            </p>
+            <p className="text-muted-foreground text-sm">
+              {t.orderSection.willProcess}
+            </p>
+            <Button onClick={() => setOrderSuccess(false)} className="mt-4">
+              {t.orderSection.placeAnother}
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
     )
   }
 

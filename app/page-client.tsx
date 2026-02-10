@@ -44,32 +44,107 @@ export function PageClient({ product }: PageClientProps) {
         </section>
 
         {/* How It Works Section */}
-        <section id="kako-funkcionise" className="py-20" aria-label={t.howItWorks.title}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold">
-                {t.howItWorks.title}
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                {t.howItWorks.subtitle}
-              </p>
+        <section id="kako-funkcionise" className="py-24 relative overflow-hidden" aria-label={t.howItWorks.title}>
+          {/* Background decoration */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-12">
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-5xl mx-auto">
+              {/* Section header */}
+              <div className="text-center space-y-4 mb-16">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                  {t.howItWorks.title}
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold">
+                  {t.howItWorks.title}
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  {t.howItWorks.subtitle}
+                </p>
+              </div>
+
+              {/* Steps */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                {/* Connection line (desktop) */}
+                <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" />
+
                 {[
-                  { step: "1", title: t.howItWorks.step1Title, desc: t.howItWorks.step1Desc },
-                  { step: "2", title: t.howItWorks.step2Title, desc: t.howItWorks.step2Desc },
-                  { step: "3", title: t.howItWorks.step3Title, desc: t.howItWorks.step3Desc },
-                  { step: "4", title: t.howItWorks.step4Title, desc: t.howItWorks.step4Desc },
-                ].map((item) => (
-                  <div
-                    key={item.step}
-                    className="relative p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-colors text-center"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                      {item.step}
+                  {
+                    step: "1",
+                    title: t.howItWorks.step1Title,
+                    desc: t.howItWorks.step1Desc,
+                    icon: (
+                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    step: "2",
+                    title: t.howItWorks.step2Title,
+                    desc: t.howItWorks.step2Desc,
+                    icon: (
+                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m0-3-3-3m0 0-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-7.5a2.25 2.25 0 0 1 2.25-2.25h.75" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    step: "3",
+                    title: t.howItWorks.step3Title,
+                    desc: t.howItWorks.step3Desc,
+                    icon: (
+                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V8.25a1.575 1.575 0 0 0-3.15 0" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    step: "4",
+                    title: t.howItWorks.step4Title,
+                    desc: t.howItWorks.step4Desc,
+                    icon: (
+                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                      </svg>
+                    ),
+                  },
+                ].map((item, index) => (
+                  <div key={item.step} className="relative group">
+                    <div className="flex flex-col items-center text-center">
+                      {/* Step number badge with icon */}
+                      <div className="relative z-10 mb-6">
+                        <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 group-hover:border-primary/40 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/10">
+                          <div className="text-primary">
+                            {item.icon}
+                          </div>
+                        </div>
+                        {/* Step number */}
+                        <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shadow-md">
+                          {item.step}
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {item.desc}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+
+                    {/* Arrow connector (mobile/tablet) */}
+                    {index < 3 && (
+                      <div className="flex justify-center my-4 lg:hidden">
+                        <svg className="w-6 h-6 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -78,37 +153,75 @@ export function PageClient({ product }: PageClientProps) {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-muted/30" aria-label={t.about.title}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold">
-                {t.about.title}
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                {t.about.description}
-              </p>
+        <section id="about" className="py-24 relative overflow-hidden" aria-label={t.about.title}>
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-6xl mx-auto">
+              {/* Section header */}
+              <div className="text-center space-y-4 mb-16">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium tracking-wide uppercase">
+                  {t.nav.about}
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold">
+                  {t.about.title}
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  {t.about.description}
+                </p>
+              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
                 {[
                   {
                     title: t.about.medicalGrade,
                     description: t.about.medicalDesc,
+                    icon: (
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                      </svg>
+                    ),
                   },
                   {
                     title: t.about.clinicallyTested,
                     description: t.about.clinicalDesc,
+                    icon: (
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                      </svg>
+                    ),
                   },
                   {
                     title: t.about.easyToUse,
                     description: t.about.easyDesc,
+                    icon: (
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 0-.668-.668 1.667 1.667 0 0 1-1.667-1.667V8.25a1.575 1.575 0 0 0-3.15 0" />
+                      </svg>
+                    ),
                   },
                 ].map((item, i) => (
                   <article
                     key={i}
-                    className="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-colors"
+                    className={`group relative p-10 text-center ${
+                      i === 1
+                        ? "bg-primary text-primary-foreground md:rounded-2xl md:scale-105 md:shadow-2xl md:shadow-primary/20 md:z-10 rounded-2xl"
+                        : "bg-card md:border md:border-border/50 rounded-2xl md:rounded-none " + (i === 0 ? "md:rounded-l-2xl" : "md:rounded-r-2xl")
+                    } transition-all duration-300`}
                   >
-                    <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    {/* Icon */}
+                    <div className={`w-16 h-16 rounded-2xl mx-auto flex items-center justify-center mb-6 ${
+                      i === 1 ? "bg-primary-foreground/20" : "bg-primary/10"
+                    }`}>
+                      <div className={i === 1 ? "text-primary-foreground" : "text-primary"}>
+                        {item.icon}
+                      </div>
+                    </div>
+
+                    <h3 className={`text-xl font-bold mb-4 ${i === 1 ? "" : "group-hover:text-primary transition-colors"}`}>
+                      {item.title}
+                    </h3>
+                    <p className={`leading-relaxed ${i === 1 ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                      {item.description}
+                    </p>
                   </article>
                 ))}
               </div>
