@@ -29,7 +29,8 @@ export function ProductHeroClient({ product }: ProductHeroProps) {
 
   return (
     <div className="relative min-h-[100svh] md:min-h-screen overflow-hidden flex items-center">
-      {/* Background Video */}
+      {/* Background Image (swap back to video by uncommenting below and removing the img) */}
+      {/* VIDEO VERSION:
       <video
         autoPlay
         loop
@@ -43,9 +44,16 @@ export function ProductHeroClient({ product }: ProductHeroProps) {
       >
         <source src={isMobile ? "/cinematicMOBILE.mp4" : "/cinematicDESK.mp4"} type="video/mp4" />
       </video>
+      */}
+      <img
+        src={isMobile ? "/hero-mobile.png" : "/hero-desktop.png"}
+        alt=""
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        style={{ zIndex: 0, opacity: 0.9 }}
+      />
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background/60 via-background/50 to-background/90" style={{ zIndex: 1 }}></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background/20 via-background/10 to-background/60" style={{ zIndex: 1 }}></div>
 
       {/* Content */}
       <div className="relative w-full container mx-auto px-4 py-6 md:py-12 lg:py-16" style={{ zIndex: 10 }}>
