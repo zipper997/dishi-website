@@ -90,7 +90,7 @@ export function JsonLd() {
         name: "Koliko dugo traje jedna trakica?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Jedna disi trakica je dizajnirana za jednokratnu upotrebu i traje do 12 sati. Preporučujemo korišćenje nove trakice svake noći za najbolje rezultate.",
+          text: "Jedna disi trakica je dizajnirana za jednokratnu upotrebu i traje do 24 sata. Preporučujemo korišćenje nove trakice svake noći za najbolje rezultate.",
         },
       },
       {

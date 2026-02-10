@@ -136,7 +136,7 @@ export function PageClient({ product }: PageClientProps) {
 
         {/* Order Form Section */}
         <section id="order" className="py-20 bg-muted/30" aria-label={t.orderSection.title}>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 flex flex-col items-center">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 {t.orderSection.title}
